@@ -9,11 +9,7 @@
                 class = "search-results__column" 
                 md    = "6"
             > 
-                <h3 class="font-weight-light"> Internal </h3>
-
-                <div class="mt-3">
-                    
-                </div>
+                <base-checkbox-group label="Internal"></base-checkbox-group>
             </b-col>
             
             <!-- External -->
@@ -21,19 +17,20 @@
                 class = "search-results__column" 
                 md    = "6"
             > 
-                <h3 class="font-weight-light"> External </h3>
-
-                <div class="mt-3">
-                    
-                </div>
+                <base-checkbox-group label="External"></base-checkbox-group>
             </b-col>
         </b-row>
     </b-container>
 </template>
 
 <script>
+    import BaseCheckboxGroup from './BaseCheckboxGroup.vue';
+
     export default {
-        name: 'SearchResults'
+        name       : 'SearchResults',
+        components : {
+            BaseCheckboxGroup
+        }
     };
 </script>
 
@@ -46,15 +43,15 @@
     }
 
     .search-results__column {
-        padding: 3rem 2rem;
+        padding: 2rem;
+    }
 
-        &:first-of-type {
-            border-right: 1px solid var(--secondary);
+    .search-results__column:first-of-type {
+        border-right: 1px solid var(--secondary);
 
-            @media (max-width: 768px) {
-                border-right  : 0;
-                border-bottom : 1px solid var(--secondary);     
-            }
+        @media (max-width: 768px) {
+            border-right  : 0;
+            border-bottom : 1px solid var(--secondary);     
         }
     }
 
