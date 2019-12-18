@@ -7,9 +7,9 @@
 </template>
 
 <script>
-	import BottomBar     from './components/BottomBar.vue';
-	import SearchResults from './components/SearchResults.vue';
-	import TopBar        from './components/TopBar.vue';
+	import BottomBar     from './components/bottom-bar/BottomBar.vue';
+	import SearchResults from './components/truck-elems/FoundedTruckElems.vue';
+	import TopBar        from './components/top-bar/TopBar.vue';
 
 	export default {
 		name       : 'app',

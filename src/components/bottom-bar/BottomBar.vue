@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import BaseBtn         from './BaseBtn.vue';
+    import BaseBtn         from '../base/BaseBtn.vue';
     import SelectionsBlock from './SelectionsBlock.vue';
 
     export default {

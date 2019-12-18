@@ -9,7 +9,10 @@
                 class = "search-results__column" 
                 md    = "6"
             > 
-                <base-checkbox-group label="Internal"></base-checkbox-group>
+                <base-checkbox-group 
+                    label    = "Internal"
+                    :options = "internalElems"
+                ></base-checkbox-group>
             </b-col>
             
             <!-- External -->
@@ -17,19 +20,28 @@
                 class = "search-results__column" 
                 md    = "6"
             > 
-                <base-checkbox-group label="External"></base-checkbox-group>
+                <base-checkbox-group 
+                    label    = "External"
+                    :options = "externalElems"
+                    external
+                ></base-checkbox-group>
             </b-col>
         </b-row>
     </b-container>
 </template>
 
 <script>
-    import BaseCheckboxGroup from './BaseCheckboxGroup.vue';
+    import { mapState } from 'vuex';
+   
+    import BaseCheckboxGroup from '../base/BaseCheckboxGroup.vue';
 
     export default {
         name       : 'SearchResults',
         components : {
             BaseCheckboxGroup
+        },
+        computed: {
+            ...mapState([ 'externalElems', 'internalElems' ])
         }
     };
 </script>
