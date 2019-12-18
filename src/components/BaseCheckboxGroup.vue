@@ -6,6 +6,7 @@
         <b-form-checkbox-group
             class    = "checkbox-group"
             v-model  = "selected"
+            size     = "lg"
             :options = "options"
             stacked
         ></b-form-checkbox-group>
@@ -36,7 +37,7 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
     .checkbox-group-wrapper > :first-child {
         font-size   : 1.75rem;
@@ -45,7 +46,35 @@
     }
 
     .checkbox-group {
-        outline: none;
+        margin-top : .25rem;
+        outline    : none;
+
+        .custom-control-label {
+            cursor: pointer;
+
+            &:before {
+                background-color: #d2e4f4;
+            }
+        }
+
+        .custom-checkbox.b-custom-control-lg {
+            line-height: 1.7;
+
+            &:not(:last-of-type) {
+                margin-bottom: .5rem;
+            }
+
+            .custom-control-label:before,
+            .custom-control-label:after {
+                width  : 1.5rem;
+                height : 1.5rem;
+            }
+
+            span {
+                font-size   : 1rem;
+                margin-left : .25rem;
+            }
+        }
     }
 
 </style>
