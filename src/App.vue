@@ -43,8 +43,8 @@
 	}
 
 	.main {
-        height     : calc(100% - var(--topbar-height) - var(--bottombar-height));
-        margin     : var(--topbar-height) 0 var(--bottombar-height);
+        height     : calc(100% - var(--topbar-height));
+        margin     : var(--topbar-height) 0 0;
         overflow-y : auto;
 	}
 	

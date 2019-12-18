@@ -1,5 +1,8 @@
 <template>
-    <footer class="bottom-bar">
+    <footer 
+        class  = "bottom-bar"
+        :class = "{ 'bottom-bar--shown': selectedTruckElemsLength }"
+    >
         <!-- Selections -->
         <selections-block></selections-block>
 
@@ -51,6 +54,8 @@
 <style lang="scss" scoped>
 
     .bottom-bar {
+        --bottombar-height: 11rem;
+        
         position         : fixed;
         bottom           : 0;
         left             : 0;
@@ -60,9 +65,15 @@
         padding          : 1.25rem 2.5rem;
         height           : var(--bottombar-height); 
         background-color : #ffffff;
+        transform        : translateY(var(--bottombar-height));
+        transition       : transform 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
         box-shadow       : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
                            0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
                            0px -1px 18px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .bottom-bar--shown {
+        transform: translateY(0);
     }
 
 </style>

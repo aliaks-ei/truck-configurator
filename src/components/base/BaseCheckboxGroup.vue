@@ -70,6 +70,10 @@
         font-weight : 300;
     }
 
+    .checkbox-group-wrapper > * {
+        outline: none;
+    }
+
     .checkbox-group > :first-child {
         margin-top : 0.5rem;
         outline    : none;

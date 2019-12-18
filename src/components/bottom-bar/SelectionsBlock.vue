@@ -3,22 +3,18 @@
         <h3 class="font-weight-light"> Your selection </h3>
 
         <div class="selections-block__items">
-            <span v-if="!selectedTruckElemsLength"> Search elements to select items. </span>
+            <selection
+                v-for = "truckElem in selectedElems.internalElements"
+                :key  = "truckElem.name"
+                :item = "truckElem"
+            ></selection>
 
-            <div v-else>
-                <selection
-                    v-for = "truckElem in selectedElems.internalElements"
-                    :key  = "truckElem.name"
-                    :item = "truckElem"
-                ></selection>
-
-                <selection
-                    v-for = "truckElem in selectedElems.externalElements"
-                    :key  = "truckElem.name"
-                    :item = "truckElem"
-                    external
-                ></selection>
-            </div>
+            <selection
+                v-for = "truckElem in selectedElems.externalElements"
+                :key  = "truckElem.name"
+                :item = "truckElem"
+                external
+            ></selection>
         </div>
 
         <span 
