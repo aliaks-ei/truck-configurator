@@ -5,6 +5,12 @@ const getters = {
                 ? selectedElems.externalElements
                 : selectedElems.internalElements;
         };
+    },
+
+    selectedTruckElemsLength({ selectedElems }) {
+        const { externalElements, internalElements } = selectedElems;
+
+        return externalElements.length + internalElements.length;
     }
 };
 

@@ -3,7 +3,7 @@
         <h3 class="font-weight-light"> Your selection </h3>
 
         <div class="selections-block__items">
-            <span v-if="!isTruckElemsNotEmpty"> Search elements to select items. </span>
+            <span v-if="!selectedTruckElemsLength"> Search elements to select items. </span>
 
             <div v-else>
                 <selection
@@ -23,7 +23,7 @@
 
         <div 
             class  = "selections-block__unselect-btn"
-            v-if   = "isTruckElemsNotEmpty"
+            v-if   = "selectedTruckElemsLength"
             @click = "unselectAll"
         > 
             Unselect all 
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    import { mapMutations, mapState } from 'vuex';
+    import { mapGetters, mapMutations, mapState } from 'vuex';
 
     import Selection from './SelectionsBlockSelection.vue';
 
@@ -40,13 +40,8 @@
         name       : 'SelectionsBlock',
         components : { Selection },
         computed   : {
-            ...mapState([ 'selectedElems' ]),
-
-            isTruckElemsNotEmpty() {
-                const { internalElements, externalElements } = this.selectedElems;
-
-                return internalElements.length || externalElements.length;
-            }
+            ...mapGetters([ 'selectedTruckElemsLength' ]),
+            ...mapState([ 'selectedElems' ])
         },
         methods: {
             ...mapMutations([ 'clearAllSelections', 'updateSearchQuery' ]),

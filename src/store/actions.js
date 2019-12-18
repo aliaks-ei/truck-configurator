@@ -42,8 +42,19 @@ const actions = {
         }
     },
 
-    readPossibleCombinations() {
+    async readPossibleCombinations({ commit, state }) {
+        commit('fillCombinations');
 
+        try {
+            const { data } = await HTTP.post('possible-combinations', state.selectedElems);
+
+            commit('fillCombinations', data);
+
+            return data;
+        }
+        catch (errors) {
+            throw errors;
+        }
     }
 };
 

@@ -1,7 +1,8 @@
 <template>
     <b-button 
-        class    = "base-btn"
-        :variant = "variant"
+        class     = "base-btn"
+        :disabled = "disabled"
+        :variant  = "variant"
         squared
     > 
         <slot></slot>
@@ -12,6 +13,11 @@
     export default {
         name  : 'BaseBtn',
         props : {
+            disabled: {
+                type     : Boolean,
+                required : false,
+                default  : false
+            },
             variant: {
                 type     : String,
                 required : false,

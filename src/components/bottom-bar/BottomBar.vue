@@ -4,7 +4,10 @@
         <selections-block></selections-block>
 
         <!-- View combinations button -->
-        <base-btn>
+        <base-btn 
+            :disabled     = "!selectedTruckElemsLength"
+            @click.native = "readPossibleCombinations" 
+        >
             <span> View combinations </span>
 
             <i class="material-icons ml-2"> arrow_forward </i>
@@ -13,6 +16,8 @@
 </template>
 
 <script>
+    import { mapActions, mapGetters } from 'vuex';
+
     import BaseBtn         from '../base/BaseBtn.vue';
     import SelectionsBlock from './SelectionsBlock.vue';
 
@@ -21,6 +26,12 @@
         components : {
             BaseBtn,
             SelectionsBlock
+        },
+        computed: {
+            ...mapGetters([ 'selectedTruckElemsLength' ])
+        },
+        methods: {
+            ...mapActions([ 'readPossibleCombinations' ])
         }
     };
 </script>
