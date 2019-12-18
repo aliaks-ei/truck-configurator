@@ -1,22 +1,27 @@
 <template>
     <footer class="bottom-bar">
-        <div>asdf</div>
+        <!-- Selections -->
+        <selections-block></selections-block>
 
-        <b-button 
-            class   = "view-combinations-btn"
-            variant = "primary"
-            squared
-        > 
+        <!-- View combinations button -->
+        <base-btn>
             <span> View combinations </span>
 
-            <i class="material-icons"> arrow_forward </i>
-        </b-button>
+            <i class="material-icons ml-2"> arrow_forward </i>
+        </base-btn>
     </footer>
 </template>
 
 <script>
+    import BaseBtn         from './BaseBtn.vue';
+    import SelectionsBlock from './SelectionsBlock.vue';
+
     export default {
-        name: 'BottomBar'
+        name       : 'BottomBar',
+        components : {
+            BaseBtn,
+            SelectionsBlock
+        }
     };
 </script>
 
@@ -28,24 +33,12 @@
         left            : 0;
         right           : 0;
         display         : flex;
-        align-items     : center;
         justify-content : space-between; 
-        padding         : 2.5rem;
+        padding         : 1rem 2.5rem;
+        height          : 10rem; 
         box-shadow      : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
                           0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
                           0px -1px 18px 0px rgba(0, 0, 0, 0.12);
-    }
-
-    .view-combinations-btn {
-        display        : flex;
-        align-items    : center;
-        font-weight    : 600;
-        padding        : 1.5rem 2rem;
-        text-transform : uppercase;
-
-        .material-icons {
-            margin-left: .5rem;
-        }
     }
 
 </style>
