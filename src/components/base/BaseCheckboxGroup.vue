@@ -74,7 +74,8 @@
     }
 
     .checkbox-group {
-        outline: none;
+        margin-top : 0.5rem;
+        outline    : none;
     }
 
     .base-checkbox.custom-control {

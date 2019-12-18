@@ -8,6 +8,11 @@ const mutations = {
         }
     },
 
+    clearAllSelections({ selectedElems }) {
+        selectedElems.externalElements = [];
+        selectedElems.internalElements = [];
+    },
+
     removeTruckElemFromSelected({ selectedElems }, { elem = {}, isExternal = false } = {}) {
         const truckElems = isExternal 
             ? selectedElems.externalElements 
@@ -32,6 +37,10 @@ const mutations = {
 
     fillInternalElems(state, internalElems = []) {
         state.internalElems = internalElems;
+    },
+
+    updateSearchQuery(state, newValue = '') {
+        state.searchQuery = newValue;
     }
 };
 

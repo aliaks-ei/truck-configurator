@@ -6,7 +6,9 @@ const state = {
     selectedElems: {
         internalElements : [],
         externalElements : []
-    }
+    },
+
+    searchQuery: ''
 };
 
 export default state;

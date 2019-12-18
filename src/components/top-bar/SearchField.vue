@@ -2,9 +2,9 @@
     <b-nav-text class="position-relative">
         <b-form-input 
             class       = "search-input rounded-pill"
-            v-model     = "searchQuery" 
             placeholder = "Search here"
-            @input      = "searchByQuery"
+            :value      = "searchQuery"
+            @input      = "updateSearchQuery"
         ></b-form-input>
 
         <i class="search-input__search-icon material-icons text-primary"> search </i>
@@ -12,24 +12,28 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex';
+    import { mapActions, mapMutations, mapState } from 'vuex';
 
     import helpers from '@/utils/helpers';
 
     export default {
-        name: 'SearchField',
-        data() {
-            return {
-                searchQuery: ''
-            };
+        name     : 'SearchField',
+        computed : {
+            ...mapState([ 'searchQuery' ])
+        },
+        watch: {
+            searchQuery() {
+                this.searchByQuery();
+            }
         },
         methods: {
             ...mapActions([ 'readInternalTruckElems', 'readExternalTruckElems' ]),
+            ...mapMutations([ 'updateSearchQuery' ]),
 
             searchByQuery: helpers.debouncedMethod(
-                async function searchForTruckElems(searchStr = '') {
-                    await this.readInternalTruckElems(searchStr);
-                    await this.readExternalTruckElems(searchStr);
+                async function searchForTruckElems() {
+                    await this.readInternalTruckElems();
+                    await this.readExternalTruckElems();
                 }, 
                 300
             )

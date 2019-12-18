@@ -1,13 +1,14 @@
 import { HTTP } from '@/configs/http';
 
 const actions = {
-    async readInternalTruckElems({ commit }, searchQuery = '') {
+    async readInternalTruckElems({ commit, state }) {
+        const { searchQuery } = state;
+
         if (!(searchQuery && searchQuery.length)) {
             commit('fillInternalElems');
 
             return;
         }
-
         try {
             const { data } = await HTTP.get(`internal/${ searchQuery }`);
             
@@ -20,7 +21,9 @@ const actions = {
         }
     },
 
-    async readExternalTruckElems({ commit }, searchQuery = '') {
+    async readExternalTruckElems({ commit, state }) {
+        const { searchQuery } = state;
+
         if (!(searchQuery && searchQuery.length)) {
             commit('fillExternalElems');
 

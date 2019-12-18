@@ -3,11 +3,20 @@
         <h3 class="font-weight-light"> Your selection </h3>
 
         <div class="selections-block__items">
-            Search elements to select items.
+            <span v-if="!truckElems.length"> Search elements to select items. </span>
+
+            <selection
+                v-for  = "truckElem in truckElems"
+                :key   = "truckElem.name"
+                :title = "truckElem.name"
+                v-else
+            ></selection>
         </div>
 
         <div 
-            class = "selections-block__unselect-btn"
+            class  = "selections-block__unselect-btn"
+            v-if   = "truckElems.length"
+            @click = "unselectAll"
         > 
             Unselect all 
         </div>
@@ -15,8 +24,30 @@
 </template>
 
 <script>
+    import { mapMutations, mapState } from 'vuex';
+
+    import Selection from './SelectionsBlockSelection.vue';
+
     export default {
-        name: 'SelectionsBlock'
+        name       : 'SelectionsBlock',
+        components : { Selection },
+        computed   : {
+            ...mapState([ 'selectedElems' ]),
+
+            truckElems() {
+                const { internalElements, externalElements } = this.selectedElems;
+
+                return [...internalElements, ...externalElements];
+            }
+        },
+        methods: {
+            ...mapMutations([ 'clearAllSelections', 'updateSearchQuery' ]),
+
+            unselectAll() {
+                this.updateSearchQuery();
+                this.clearAllSelections();
+            }
+        }
     };
 </script>
 

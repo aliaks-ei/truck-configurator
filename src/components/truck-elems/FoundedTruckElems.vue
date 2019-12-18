@@ -37,10 +37,8 @@
 
     export default {
         name       : 'SearchResults',
-        components : {
-            BaseCheckboxGroup
-        },
-        computed: {
+        components : { BaseCheckboxGroup },
+        computed   : {
             ...mapState([ 'externalElems', 'internalElems' ])
         }
     };
