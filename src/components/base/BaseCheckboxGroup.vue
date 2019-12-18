@@ -3,21 +3,18 @@
         class  = "checkbox-group-wrapper"
         :label = "label"
     >
-        <b-form-checkbox-group 
-            class  = "checkbox-group"
-            :value = "selectedTruckElems(external)"
-            stacked
-        >
+        <b-form-group class="checkbox-group">
             <b-form-checkbox
-                class   = "base-checkbox"
-                v-for   = "option in options"
-                :key    = "option.name"
-                :value  = "option"
-                @change = "selectTruckElem(Boolean($event), option)"
+                class    = "base-checkbox"
+                v-for    = "option in options"
+                :checked = "selectedTruckElems(external)"
+                :key     = "option.name"
+                :value   = "option"
+                @change  = "selectTruckElem(Boolean($event), option)"
             >
                 {{ option.name }}
             </b-form-checkbox>
-        </b-form-checkbox-group>
+        </b-form-group>
     </b-form-group>
 </template>
 
@@ -73,7 +70,7 @@
         font-weight : 300;
     }
 
-    .checkbox-group {
+    .checkbox-group > :first-child {
         margin-top : 0.5rem;
         outline    : none;
     }

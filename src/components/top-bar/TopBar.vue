@@ -7,7 +7,7 @@
             />
         </b-navbar-brand>
 
-        <b-navbar-nav>
+        <b-navbar-nav align="center">
             <search-field></search-field>
         </b-navbar-nav>
     </b-navbar>

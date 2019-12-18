@@ -44,7 +44,7 @@
 <style lang="scss" scoped>
 
     .search-results__column {
-        padding: 2rem;
+        padding: 2rem 2.5rem;
     }
 
     .search-results__column:first-of-type {

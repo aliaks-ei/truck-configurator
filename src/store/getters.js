@@ -1,6 +1,8 @@
 const getters = {
     selectedTruckElems({ selectedElems }) {
         return function getElements(isExternal = false) {
+            console.log(selectedElems.externalElements.length, 
+                selectedElems.internalElements.length);
             return isExternal 
                 ? selectedElems.externalElements
                 : selectedElems.internalElements;
