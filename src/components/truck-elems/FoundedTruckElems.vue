@@ -1,8 +1,5 @@
 <template>
-    <b-container 
-        class = "search-results" 
-        fluid
-    >
+    <b-container class="h-100" fluid>
         <b-row class="h-100">
             <!-- Internal -->
             <b-col 
@@ -45,12 +42,6 @@
 </script>
 
 <style lang="scss" scoped>
-
-    .search-results {
-        height     : calc(100% - var(--topbar-height) - var(--bottombar-height));
-        margin     : var(--topbar-height) 0 var(--bottombar-height);
-        overflow-y : auto;
-    }
 
     .search-results__column {
         padding: 2rem;

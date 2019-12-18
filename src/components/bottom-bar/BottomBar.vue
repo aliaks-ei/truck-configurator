@@ -3,10 +3,20 @@
         <!-- Selections -->
         <selections-block></selections-block>
 
+        <!-- Back button -->
+        <base-btn
+            v-if          = "combinations.length"
+            variant       = "dark"
+            @click.native = "fillCombinations"
+        >
+            Back
+        </base-btn>
+
         <!-- View combinations button -->
         <base-btn 
             :disabled     = "!selectedTruckElemsLength"
             @click.native = "readPossibleCombinations" 
+            v-else
         >
             <span> View combinations </span>
 
@@ -16,7 +26,7 @@
 </template>
 
 <script>
-    import { mapActions, mapGetters } from 'vuex';
+    import { mapActions, mapGetters, mapState, mapMutations } from 'vuex';
 
     import BaseBtn         from '../base/BaseBtn.vue';
     import SelectionsBlock from './SelectionsBlock.vue';
@@ -28,10 +38,12 @@
             SelectionsBlock
         },
         computed: {
-            ...mapGetters([ 'selectedTruckElemsLength' ])
+            ...mapGetters([ 'selectedTruckElemsLength' ]),
+            ...mapState([ 'combinations' ])
         },
         methods: {
-            ...mapActions([ 'readPossibleCombinations' ])
+            ...mapActions([ 'readPossibleCombinations' ]),
+            ...mapMutations([ 'fillCombinations' ])
         }
     };
 </script>

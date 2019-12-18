@@ -1,22 +1,34 @@
 <template>
 	<div id="app">
 		<top-bar></top-bar>
-		<search-results></search-results>
+
+		<main class="main">
+			<combinations-table v-if="combinations.length"></combinations-table>
+			<search-results v-else></search-results>
+		</main>
+
 		<bottom-bar></bottom-bar>
 	</div>
 </template>
 
 <script>
-	import BottomBar     from './components/bottom-bar/BottomBar.vue';
-	import SearchResults from './components/truck-elems/FoundedTruckElems.vue';
-	import TopBar        from './components/top-bar/TopBar.vue';
+	import { mapState } from 'vuex';
+
+	import BottomBar         from './components/bottom-bar/BottomBar.vue';
+	import CombinationsTable from './components/truck-elems/CombinationsTable.vue';
+	import SearchResults     from './components/truck-elems/FoundedTruckElems.vue';
+	import TopBar            from './components/top-bar/TopBar.vue';
 
 	export default {
 		name       : 'app',
 		components : {
 			BottomBar,
+			CombinationsTable,
 			SearchResults,
 			TopBar
+		},
+		computed: {
+			...mapState([ 'combinations' ])
 		}
 	};
 </script>
@@ -28,6 +40,12 @@
 		height                  : 100%;
 		-webkit-font-smoothing  : antialiased;
 		-moz-osx-font-smoothing : grayscale;
+	}
+
+	.main {
+        height     : calc(100% - var(--topbar-height) - var(--bottombar-height));
+        margin     : var(--topbar-height) 0 var(--bottombar-height);
+        overflow-y : auto;
 	}
 	
 </style>

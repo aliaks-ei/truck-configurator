@@ -43,12 +43,11 @@ const actions = {
     },
 
     async readPossibleCombinations({ commit, state }) {
-        commit('fillCombinations');
-
         try {
             const { data } = await HTTP.post('possible-combinations', state.selectedElems);
 
             commit('fillCombinations', data);
+            commit('updateSearchQuery');
 
             return data;
         }

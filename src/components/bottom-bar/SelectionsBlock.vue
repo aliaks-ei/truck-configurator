@@ -21,13 +21,13 @@
             </div>
         </div>
 
-        <div 
+        <span 
             class  = "selections-block__unselect-btn"
-            v-if   = "selectedTruckElemsLength"
+            v-if   = "selectedTruckElemsLength && !combinations.length"
             @click = "unselectAll"
         > 
             Unselect all 
-        </div>
+        </span>
     </div>
 </template>
 
@@ -41,7 +41,7 @@
         components : { Selection },
         computed   : {
             ...mapGetters([ 'selectedTruckElemsLength' ]),
-            ...mapState([ 'selectedElems' ])
+            ...mapState([ 'combinations', 'selectedElems' ])
         },
         methods: {
             ...mapMutations([ 'clearAllSelections', 'updateSearchQuery' ]),
@@ -66,6 +66,7 @@
     .selections-block__unselect-btn {
         font-style      : italic;
         font-weight     : 600;
+        align-self      : flex-start;
         color           : var(--danger);
         text-decoration : underline;
         cursor          : pointer;

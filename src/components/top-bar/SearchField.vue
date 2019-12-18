@@ -3,6 +3,7 @@
         <b-form-input 
             class       = "search-input rounded-pill"
             placeholder = "Search here"
+            :disabled   = "Boolean(combinations.length)"
             :value      = "searchQuery"
             @input      = "updateSearchQuery"
         ></b-form-input>
@@ -19,7 +20,7 @@
     export default {
         name     : 'SearchField',
         computed : {
-            ...mapState([ 'searchQuery' ])
+            ...mapState([ 'combinations', 'searchQuery' ])
         },
         watch: {
             searchQuery() {

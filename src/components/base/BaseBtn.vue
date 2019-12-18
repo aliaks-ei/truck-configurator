@@ -30,13 +30,14 @@
 <style lang="scss" scoped>
 
     .base-btn {
-        display        : flex;
-        flex-shrink    : 0;
-        align-self     : center;
-        align-items    : center;
-        font-weight    : 700;
-        padding        : 1.5rem 2rem;
-        text-transform : uppercase;
+        display         : flex;
+        flex            : 0 0 270px;
+        align-self      : center;
+        align-items     : center;
+        justify-content : center;
+        font-weight     : 700;
+        padding         : 1.5rem 2rem;
+        text-transform  : uppercase;
     }
 
 </style>
