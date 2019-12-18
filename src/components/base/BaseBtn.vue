@@ -25,6 +25,7 @@
 
     .base-btn {
         display        : flex;
+        flex-shrink    : 0;
         align-self     : center;
         align-items    : center;
         font-weight    : 700;

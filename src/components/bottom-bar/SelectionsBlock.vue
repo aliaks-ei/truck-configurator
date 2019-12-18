@@ -3,19 +3,27 @@
         <h3 class="font-weight-light"> Your selection </h3>
 
         <div class="selections-block__items">
-            <span v-if="!truckElems.length"> Search elements to select items. </span>
+            <span v-if="!isTruckElemsNotEmpty"> Search elements to select items. </span>
 
-            <selection
-                v-for  = "truckElem in truckElems"
-                :key   = "truckElem.name"
-                :title = "truckElem.name"
-                v-else
-            ></selection>
+            <div v-else>
+                <selection
+                    v-for = "truckElem in selectedElems.internalElements"
+                    :key  = "truckElem.name"
+                    :item = "truckElem"
+                ></selection>
+
+                <selection
+                    v-for = "truckElem in selectedElems.externalElements"
+                    :key  = "truckElem.name"
+                    :item = "truckElem"
+                    external
+                ></selection>
+            </div>
         </div>
 
         <div 
             class  = "selections-block__unselect-btn"
-            v-if   = "truckElems.length"
+            v-if   = "isTruckElemsNotEmpty"
             @click = "unselectAll"
         > 
             Unselect all 
@@ -34,10 +42,10 @@
         computed   : {
             ...mapState([ 'selectedElems' ]),
 
-            truckElems() {
+            isTruckElemsNotEmpty() {
                 const { internalElements, externalElements } = this.selectedElems;
 
-                return [...internalElements, ...externalElements];
+                return internalElements.length || externalElements.length;
             }
         },
         methods: {
@@ -55,7 +63,9 @@
 
     .selections-block {
         display        : flex;
-        flex-direction :  column;
+        flex           : 0 1 75%;
+        flex-direction : column;
+        margin-top     : .5rem;
     }
 
     .selections-block__unselect-btn {
