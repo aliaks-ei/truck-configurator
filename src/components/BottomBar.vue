@@ -28,17 +28,18 @@
 <style lang="scss" scoped>
 
     .bottom-bar {
-        position        : fixed;
-        bottom          : 0;
-        left            : 0;
-        right           : 0;
-        display         : flex;
-        justify-content : space-between; 
-        padding         : 1rem 2.5rem;
-        height          : 10rem; 
-        box-shadow      : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
-                          0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
-                          0px -1px 18px 0px rgba(0, 0, 0, 0.12);
+        position         : fixed;
+        bottom           : 0;
+        left             : 0;
+        right            : 0;
+        display          : flex;
+        justify-content  : space-between; 
+        padding          : 1.25rem 2.5rem;
+        height           : var(--bottombar-height); 
+        background-color : #ffffff;
+        box-shadow       : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
+                           0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
+                           0px -1px 18px 0px rgba(0, 0, 0, 0.12);
     }
 
 </style>

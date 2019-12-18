@@ -6,6 +6,13 @@ $danger    : #e84950;
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
+// Global variables 
+
+:root {
+    --topbar-height    : 8rem;
+    --bottombar-height : 10rem;
+}
+
 html, body {
     height      : 100%;
     width       : 100%;

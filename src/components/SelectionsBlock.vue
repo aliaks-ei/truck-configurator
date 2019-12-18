@@ -1,6 +1,6 @@
 <template>
     <div class="selections-block">
-        <div class="selections-block__title"> Your selection </div>
+        <h3 class="font-weight-light"> Your selection </h3>
 
         <div class="selections-block__items">
             Search elements to select items.
@@ -27,13 +27,9 @@
         flex-direction :  column;
     }
 
-    .selections-block__title {
-        font-size   : 1.75rem;
-        font-weight : 300;
-    }
-
     .selections-block__unselect-btn {
         font-style      : italic;
+        font-weight     : 600;
         color           : var(--danger);
         text-decoration : underline;
         cursor          : pointer;

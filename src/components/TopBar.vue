@@ -35,12 +35,15 @@
 <style lang="scss" scoped>
 
     .topbar {
-        position      : fixed;
-        top           : 0;
-        left          : 0;
-        right         : 0;
-        padding       : 1.5rem 2.5rem;
-        border-bottom : 1px solid var(--secondary);
+        position         : fixed;
+        top              : 0;
+        right            : 0;
+        left             : 0;
+        z-index          : 1;
+        height           : var(--topbar-height);
+        padding          : 1.5rem 2.5rem;
+        border-bottom    : 1px solid var(--secondary);
+        background-color : #ffffff;
     }
 
     .topbar__search-wrapper {
