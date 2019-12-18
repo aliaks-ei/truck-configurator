@@ -70,11 +70,12 @@
             font-size   : 1.75rem;
             font-weight : 300;
             color       : #aaafb4;
-            padding-top : 1.5rem;
+            padding-top : .5rem;
         }
 
         .combinations-table__th:nth-of-type(2) {
-            padding-bottom: 0;
+            padding-top    : 2rem;
+            padding-bottom : 0;
 
             .material-icons {
                 font-size   : 2rem;
