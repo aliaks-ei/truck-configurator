@@ -1,10 +1,10 @@
 <template>
     <div class="selection"> 
-        <span> {{ item.name }} </span> 
+        <span> {{ title }} </span> 
 
         <i 
             class  = "material-icons selection__close-icon"
-            @click = "removeTruckElemFromSelected({ elem: item, isExternal: external })"
+            @click = "$emit('closeClicked')"
         > 
             close 
         </i>
@@ -12,26 +12,14 @@
 </template>
 
 <script>
-    import { mapMutations } from 'vuex';
-
     export default {
         name  : 'Selection',
         props : {
-            external: {
-                type     : Boolean,
+            title: {
+                type     : String,
                 required : false,
-                default  : false
-            },
-            item: {
-                type     : Object,
-                required : false,
-                default() {
-                    return {};
-                }
+                default  : ''
             }
-        },
-        methods: {
-            ...mapMutations([ 'removeTruckElemFromSelected' ])
         }
     };
 </script>

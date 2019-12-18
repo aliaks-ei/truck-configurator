@@ -48,6 +48,7 @@ const actions = {
 
             commit('fillCombinations', data);
             commit('updateSearchQuery');
+            commit('updateCombinationsPageState', true);
 
             return data;
         }

@@ -1,7 +1,6 @@
 <template>
     <b-button 
         class     = "base-btn"
-        :disabled = "disabled"
         :variant  = "variant"
         squared
     > 
@@ -13,11 +12,6 @@
     export default {
         name  : 'BaseBtn',
         props : {
-            disabled: {
-                type     : Boolean,
-                required : false,
-                default  : false
-            },
             variant: {
                 type     : String,
                 required : false,

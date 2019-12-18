@@ -8,16 +8,15 @@
 
         <!-- Back button -->
         <base-btn
-            v-if          = "combinations.length"
+            v-if          = "isCombinationsPage"
             variant       = "dark"
-            @click.native = "fillCombinations"
+            @click.native = "updateCombinationsPageState(false)"
         >
             Back
         </base-btn>
 
         <!-- View combinations button -->
         <base-btn 
-            :disabled     = "!selectedTruckElemsLength"
             @click.native = "readPossibleCombinations" 
             v-else
         >
@@ -42,11 +41,11 @@
         },
         computed: {
             ...mapGetters([ 'selectedTruckElemsLength' ]),
-            ...mapState([ 'combinations' ])
+            ...mapState([ 'isCombinationsPage' ])
         },
         methods: {
             ...mapActions([ 'readPossibleCombinations' ]),
-            ...mapMutations([ 'fillCombinations' ])
+            ...mapMutations([ 'updateCombinationsPageState' ])
         }
     };
 </script>
@@ -66,7 +65,8 @@
         height           : var(--bottombar-height); 
         background-color : #ffffff;
         transform        : translateY(var(--bottombar-height));
-        transition       : transform 500ms cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition       : transform 700ms cubic-bezier(0.25, 0.8, 0.25, 1);
+        will-change      : transform;
         box-shadow       : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
                            0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
                            0px -1px 18px 0px rgba(0, 0, 0, 0.12);

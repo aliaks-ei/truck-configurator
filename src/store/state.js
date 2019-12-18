@@ -8,7 +8,9 @@ const state = {
         externalElements : []
     },
 
-    searchQuery: ''
+    searchQuery: '',
+
+    isCombinationsPage: false
 };
 
 export default state;

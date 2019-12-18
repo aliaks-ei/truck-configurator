@@ -3,7 +3,7 @@
 		<top-bar></top-bar>
 
 		<main class="main">
-			<combinations-table v-if="combinations.length"></combinations-table>
+			<combinations-table v-if="isCombinationsPage"></combinations-table>
 			<search-results v-else></search-results>
 		</main>
 
@@ -28,7 +28,7 @@
 			TopBar
 		},
 		computed: {
-			...mapState([ 'combinations' ])
+			...mapState([ 'isCombinationsPage' ])
 		}
 	};
 </script>

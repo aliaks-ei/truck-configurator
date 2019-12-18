@@ -3,7 +3,7 @@
         <b-form-input 
             class       = "search-input rounded-pill"
             placeholder = "Search here"
-            :disabled   = "Boolean(combinations.length)"
+            :disabled   = "isCombinationsPage"
             :value      = "searchQuery"
             @input      = "updateSearchQuery"
         ></b-form-input>
@@ -20,7 +20,7 @@
     export default {
         name     : 'SearchField',
         computed : {
-            ...mapState([ 'combinations', 'searchQuery' ])
+            ...mapState([ 'isCombinationsPage', 'searchQuery' ])
         },
         watch: {
             searchQuery() {
@@ -33,8 +33,10 @@
 
             searchByQuery: helpers.debouncedMethod(
                 async function searchForTruckElems() {
-                    await this.readInternalTruckElems();
-                    await this.readExternalTruckElems();
+                    const readInternalElems = this.readInternalTruckElems();
+                    const readExternalElems = this.readExternalTruckElems();
+
+                    await Promise.all([readInternalElems, readExternalElems]);
                 }, 
                 300
             )

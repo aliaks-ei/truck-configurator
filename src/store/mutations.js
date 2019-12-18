@@ -39,6 +39,10 @@ const mutations = {
         state.internalElems = internalElems;
     },
 
+    updateCombinationsPageState(state, isActive = false) {
+        state.isCombinationsPage = isActive;
+    },
+
     updateSearchQuery(state, newValue = '') {
         state.searchQuery = newValue;
     }

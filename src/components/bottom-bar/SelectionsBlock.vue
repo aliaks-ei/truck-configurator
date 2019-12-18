@@ -4,22 +4,24 @@
 
         <div class="selections-block__items">
             <selection
-                v-for = "truckElem in selectedElems.internalElements"
-                :key  = "truckElem.name"
-                :item = "truckElem"
+                v-for         = "truckElem in selectedElems.internalElements"
+                :key          = "truckElem.name"
+                :title        = "truckElem.name"
+                @closeClicked = "handleCloseIconClick({ elem: truckElem, isExternal: false })"
             ></selection>
 
             <selection
-                v-for = "truckElem in selectedElems.externalElements"
-                :key  = "truckElem.name"
-                :item = "truckElem"
+                v-for         = "truckElem in selectedElems.externalElements"
+                :key          = "truckElem.name"
+                :title        = "truckElem.name"
+                @closeClicked = "handleCloseIconClick({ elem: truckElem, isExternal: true })"
                 external
             ></selection>
         </div>
 
         <span 
             class  = "selections-block__unselect-btn"
-            v-if   = "selectedTruckElemsLength && !combinations.length"
+            v-if   = "selectedTruckElemsLength && !isCombinationsPage"
             @click = "unselectAll"
         > 
             Unselect all 
@@ -28,7 +30,7 @@
 </template>
 
 <script>
-    import { mapGetters, mapMutations, mapState } from 'vuex';
+    import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
     import Selection from './SelectionsBlockSelection.vue';
 
@@ -37,10 +39,23 @@
         components : { Selection },
         computed   : {
             ...mapGetters([ 'selectedTruckElemsLength' ]),
-            ...mapState([ 'combinations', 'selectedElems' ])
+            ...mapState([ 'isCombinationsPage', 'selectedElems' ])
         },
         methods: {
-            ...mapMutations([ 'clearAllSelections', 'updateSearchQuery' ]),
+            ...mapActions([ 'readPossibleCombinations' ]),
+            ...mapMutations([ 
+                'clearAllSelections', 
+                'removeTruckElemFromSelected',
+                'updateCombinationsPageState',
+                'updateSearchQuery' 
+            ]),
+
+            handleCloseIconClick({ elem, isExternal }) {
+                this.removeTruckElemFromSelected({ elem, isExternal });
+                
+                !this.selectedTruckElemsLength  && this.updateCombinationsPageState();
+                this.isCombinationsPage && this.readPossibleCombinations();
+            },
 
             unselectAll() {
                 this.updateSearchQuery();
