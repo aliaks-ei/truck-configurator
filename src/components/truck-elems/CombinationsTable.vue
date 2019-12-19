@@ -96,6 +96,7 @@
         .combinations-table__no-results {
             font-size   : 2rem;
             font-weight : 300;
+            color       : var(--danger);
             padding-top : 5rem;
         }
     }
@@ -164,6 +165,10 @@
             .combinations-table__tr {
                 height    : 1.75rem;
                 font-size : 12px;
+            }
+
+            .combinations-table__no-results {
+                font-size: 1.5rem;
             }
         }
     }

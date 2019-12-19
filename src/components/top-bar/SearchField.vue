@@ -1,5 +1,5 @@
 <template>
-    <b-nav-text class="position-relative">
+    <b-nav-text class="search-input-wrapper">
         <b-form-input 
             class       = "search-input rounded-pill"
             placeholder = "Search here"
@@ -46,9 +46,16 @@
 
 <style lang="scss" scoped>
 
+    .search-input-wrapper {
+        position : relative;
+        height   : 100%;
+        width    : 100%;
+        padding  : 0;
+    }
+
     .search-input {
-        height  : 3.5rem;
-        width   : 600px;
+        height  : 100%;
+        width   : 100%;
         padding : 0.375rem 4rem 0.375rem 1.5rem;
         border  : 1px solid var(--secondary);
     }
@@ -59,6 +66,18 @@
         top       : 50%;
         transform : translateY(-50%);
         font-size : 2rem;
+    }
+
+    @media (max-width: 576px) {
+        .search-input {
+            font-size : 14px;
+            padding   : 0.25rem 3rem 0.25rem 1rem;
+        }
+
+         .search-input__search-icon {
+            right     : 1rem;
+            font-size : 1.5rem;
+        }
     }
 
 </style>

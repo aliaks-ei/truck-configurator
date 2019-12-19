@@ -10,6 +10,10 @@ $dark      : #303c49;
 // Global variables 
 :root {
     --topbar-height: 8rem;
+
+    @media (max-width: 576px) {
+        --topbar-height: 6rem;
+    }
 }
 
 html, body {
