@@ -1,6 +1,6 @@
 <template>
     <div class="selections-block">
-        <h3 class="font-weight-light"> Your selection </h3>
+        <h3 class="selections-block__title"> Your selection </h3>
 
         <div class="selections-block__items">
             <selection
@@ -74,6 +74,10 @@
         margin-top     : .5rem;
     }
 
+    .selections-block__items {
+        line-height: 1.25;
+    }
+
     .selections-block__unselect-btn {
         font-style      : italic;
         font-weight     : 600;
@@ -82,6 +86,33 @@
         text-decoration : underline;
         cursor          : pointer;
         margin-top      : auto;
+    }
+
+    @media (max-width: 992px) {
+        .selections-block__title {
+            font-size     : 1.5rem;
+            margin-bottom : .25rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .selections-block {
+            flex: 0 1 auto;
+        }
+
+        .selections-block__title {
+            font-size: 1.25rem;
+        }
+
+        .selections-block__items {
+            line-height: 1;
+        }
+
+        .selections-block__unselect-btn {
+            position  : absolute;
+            right     : 1.25rem;
+            font-size : 14px;
+        }
     }
 
 </style>

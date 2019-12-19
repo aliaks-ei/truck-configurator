@@ -1,11 +1,8 @@
 <template>
     <b-container class="h-100" fluid>
-        <b-row class="h-100">
+        <b-row class="search-results">
             <!-- Internal -->
-            <b-col 
-                class = "search-results__column" 
-                md    = "6"
-            > 
+            <b-col class="search-results__column"> 
                 <base-checkbox-group 
                     label    = "Internal"
                     :options = "internalElems"
@@ -13,10 +10,7 @@
             </b-col>
             
             <!-- External -->
-            <b-col 
-                class = "search-results__column" 
-                md    = "6"
-            > 
+            <b-col class="search-results__column"> 
                 <base-checkbox-group 
                     label    = "External"
                     :options = "externalElems"
@@ -43,16 +37,31 @@
 
 <style lang="scss" scoped>
 
+    .search-results {
+        height: 100%;
+    }
+
     .search-results__column {
         padding: 2rem 2.5rem;
     }
 
     .search-results__column:first-of-type {
         border-right: 1px solid var(--secondary);
+    }
 
-        @media (max-width: 768px) {
+    @media (max-width: 576px) {
+        .search-results {
+            flex-direction: column;
+        }
+
+        .search-results__column {
+            flex-grow : 0;
+            padding   : 1rem 1.5rem 1.5rem;
+        }
+
+        .search-results__column:first-of-type {
             border-right  : 0;
-            border-bottom : 1px solid var(--secondary);     
+            border-bottom : 1px solid var(--secondary); 
         }
     }
 

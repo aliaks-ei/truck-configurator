@@ -18,6 +18,7 @@
         <!-- View combinations button -->
         <base-btn 
             @click.native = "readPossibleCombinations" 
+            :disabled     = "isViewCombinationsBtnDisabled"
             v-else
         >
             <span> View combinations </span>
@@ -41,7 +42,13 @@
         },
         computed: {
             ...mapGetters([ 'selectedTruckElemsLength' ]),
-            ...mapState([ 'isCombinationsPage' ])
+            ...mapState([ 'isCombinationsPage', 'selectedElems' ]),
+
+            isViewCombinationsBtnDisabled() {
+                const { internalElements, externalElements } = this.selectedElems;
+
+                return !(internalElements.length && externalElements.length);
+            }
         },
         methods: {
             ...mapActions([ 'readPossibleCombinations' ]),
@@ -61,7 +68,7 @@
         right            : 0;
         display          : flex;
         justify-content  : space-between; 
-        padding          : 1.25rem 2.5rem;
+        padding          : 1rem 2.5rem;
         height           : var(--bottombar-height); 
         background-color : #ffffff;
         transform        : translateY(var(--bottombar-height));
@@ -70,6 +77,14 @@
         box-shadow       : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
                            0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
                            0px -1px 18px 0px rgba(0, 0, 0, 0.12);
+
+        @media (max-width: 992px) {
+            padding: 1rem 2rem;
+        }
+
+        @media (max-width: 768px) {
+            padding: .5rem 1.25rem;
+        }
     }
 
     .bottom-bar--shown {

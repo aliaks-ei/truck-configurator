@@ -3,18 +3,16 @@
         class  = "checkbox-group-wrapper"
         :label = "label"
     >
-        <b-form-group class="checkbox-group">
-            <b-form-checkbox
-                class    = "base-checkbox"
-                v-for    = "option in options"
-                :checked = "selectedTruckElems(external)"
-                :key     = "option.name"
-                :value   = "option"
-                @change  = "selectTruckElem(Boolean($event), option)"
-            >
-                {{ option.name }}
-            </b-form-checkbox>
-        </b-form-group>
+        <b-form-checkbox
+            class    = "base-checkbox"
+            v-for    = "option in options"
+            :checked = "selectedTruckElems(external)"
+            :key     = "option.name"
+            :value   = "option"
+            @change  = "selectTruckElem(Boolean($event), option)"
+        >
+            {{ option.name }}
+        </b-form-checkbox>
     </b-form-group>
 </template>
 
@@ -52,11 +50,13 @@
             ]),
 
             selectTruckElem(isSelected, elem) {
+                const params = { elem, isExternal: this.external };
+
                 if (isSelected) {
-                    this.addTruckElemToSelected({ elem, isExternal: this.external });
+                    this.addTruckElemToSelected(params);
                 }
                 else {
-                    this.removeTruckElemFromSelected({ elem, isExternal: this.external });
+                    this.removeTruckElemFromSelected(params);
                 }
             }
         }
@@ -65,18 +65,18 @@
 
 <style lang="scss">
 
-    .checkbox-group-wrapper > :first-child {
-        font-size   : 1.75rem;
-        font-weight : 300;
-    }
+    .checkbox-group-wrapper.form-group {
+        margin-bottom: 0; 
+        
+        & > :first-child {
+            font-size     : 1.75rem;
+            font-weight   : 300;
+            margin-bottom : .5rem;
+        }
 
-    .checkbox-group-wrapper > * {
-        outline: none;
-    }
-
-    .checkbox-group > :first-child {
-        margin-top : 0.5rem;
-        outline    : none;
+        & > * {
+            outline: none;
+        }
     }
 
     .base-checkbox.custom-control {

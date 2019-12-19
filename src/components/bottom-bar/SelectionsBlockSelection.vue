@@ -43,4 +43,29 @@
         cursor      : pointer;
     }
 
+    @media (max-width: 992px) {
+        .selection {
+            font-size: 14px;
+        }  
+        
+        .selection__close-icon {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .selection {
+            font-size: 12px;
+        }  
+
+        .selection:not(:last-of-type) {
+            margin-right: .5rem;
+        }
+        
+        .selection__close-icon {
+            font-size  : .8rem;
+            margin-top : .1rem;
+        }
+    }
+
 </style>
