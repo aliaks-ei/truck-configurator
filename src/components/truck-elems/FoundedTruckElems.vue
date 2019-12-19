@@ -56,7 +56,7 @@
 
         .search-results__column {
             flex-grow : 0;
-            padding   : 1rem 1.5rem 1.5rem;
+            padding   : 1rem 1.5rem;
         }
 
         .search-results__column:first-of-type {

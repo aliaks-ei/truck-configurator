@@ -103,4 +103,32 @@
         }
     }
 
+    @media (max-width: 576px) {
+        .checkbox-group-wrapper.form-group > :first-child {
+            font-size     : 1.25rem;
+            margin-bottom : .25rem;
+        }
+
+        .base-checkbox.custom-control {
+            line-height  : 1.5;
+            padding-left : 1.5rem;
+
+            &:not(:last-of-type) {
+                margin-bottom: 0;
+            }
+
+            .custom-control-label {
+                font-size: 12px;
+
+                &:before,
+                &:after {
+                    width       : 1rem;
+                    height      : 1rem;
+                    margin-left : 0;
+                    margin-top  : -0.25rem;
+                }
+            }
+        }
+    }
+
 </style>
