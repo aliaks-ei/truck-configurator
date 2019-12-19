@@ -6,14 +6,14 @@
             <selection
                 v-for         = "truckElem in selectedElems.internalElements"
                 :key          = "truckElem.name"
-                :title        = "truckElem.name"
+                :title        = "capitalizeFirstLetter(truckElem.name)"
                 @closeClicked = "handleCloseIconClick({ elem: truckElem, isExternal: false })"
             ></selection>
 
             <selection
                 v-for         = "truckElem in selectedElems.externalElements"
                 :key          = "truckElem.name"
-                :title        = "truckElem.name"
+                :title        = "capitalizeFirstLetter(truckElem.name)"
                 @closeClicked = "handleCloseIconClick({ elem: truckElem, isExternal: true })"
                 external
             ></selection>
@@ -32,6 +32,8 @@
 <script>
     import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
+    import helpers from '@/utils/helpers';
+
     import Selection from './SelectionsBlockSelection.vue';
 
     export default {
@@ -49,6 +51,8 @@
                 'updateCombinationsPageState',
                 'updateSearchQuery' 
             ]),
+
+            capitalizeFirstLetter: helpers.capitalizeFirstLetter, 
 
             handleCloseIconClick({ elem, isExternal }) {
                 this.removeTruckElemFromSelected({ elem, isExternal });

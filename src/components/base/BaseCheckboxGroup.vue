@@ -11,13 +11,15 @@
             :value   = "option"
             @change  = "selectTruckElem(Boolean($event), option)"
         >
-            {{ option.name }}
+            {{ capitalizeFirstLetter(option.name) }}
         </b-form-checkbox>
     </b-form-group>
 </template>
 
 <script>
     import { mapGetters, mapMutations } from 'vuex';
+
+    import helpers from '@/utils/helpers';
 
     export default {
         name  : 'BaseCheckboxGroup',
@@ -48,6 +50,8 @@
                 'addTruckElemToSelected',
                 'removeTruckElemFromSelected' 
             ]),
+
+            capitalizeFirstLetter: helpers.capitalizeFirstLetter,
 
             selectTruckElem(isSelected, elem) {
                 const params = { elem, isExternal: this.external };

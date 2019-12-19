@@ -16,9 +16,9 @@
                         v-for = "(combination, index) in combinations"
                         :key  = "index"
                     >
-                        <td> {{ combination.internal }} </td>
+                        <td> {{ capitalizeFirstLetter(combination.internal) }} </td>
                         <td></td>
-                        <td> {{ combination.external }} </td>
+                        <td> {{ capitalizeFirstLetter(combination.external) }} </td>
                     </tr>
                 </tbody>
 
@@ -37,9 +37,14 @@
 <script>
     import { mapState } from 'vuex';
 
+    import helpers from '@/utils/helpers';
+
     export default {
         computed: {
             ...mapState([ 'combinations' ])
+        },
+        methods: {
+            capitalizeFirstLetter: helpers.capitalizeFirstLetter
         }
     };
 </script>
