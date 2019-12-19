@@ -1,6 +1,6 @@
 <template>
     <div class="combinations-wrapper">
-        <h3 class="font-weight-light text-center"> Possible Combinations Table </h3>
+        <h3 class="combinations-wrapper__title"> Possible Combinations Table </h3>
 
         <!-- Confirmations table -->
         <div class="confirmations-table-wrapper">
@@ -54,6 +54,12 @@
         padding         : 2.5rem 2rem; 
     }
 
+    .combinations-wrapper__title {
+        font-size   : 1.75rem;
+        font-weight : 300;
+        text-align  : center;
+    }
+
     .confirmations-table-wrapper {
         max-width : 800px;
         width     : 90%;
@@ -91,6 +97,74 @@
             font-size   : 2rem;
             font-weight : 300;
             padding-top : 5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .combinations-wrapper {
+            padding: 1.5rem 2rem;
+        }
+
+        .combinations-wrapper__title {
+            font-size: 1.5rem;
+        }
+
+        .confirmations-table-wrapper {
+            width: 100%;
+        }
+        
+        .combinations-table {
+            .combinations-table__th {
+                font-size   : 1.5rem;
+                padding-top : .25rem;
+            }
+
+            .combinations-table__th:nth-of-type(2) {
+                padding-top: 1rem;
+
+                .material-icons {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .combinations-table__tr {
+                height    : 2rem;
+                font-size : 14px;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .combinations-wrapper {
+            padding: 1rem;
+        }
+
+        .combinations-wrapper__title {
+            font-size: 1.25rem;
+        }
+
+        .confirmations-table-wrapper {
+            margin-top: .5rem;
+        }
+        
+        .combinations-table {
+            .combinations-table__th {
+                font-size   : 1.25rem;
+                padding-top : .25rem;
+            }
+
+            .combinations-table__th:nth-of-type(2) {
+                padding-top: .75rem;
+
+                .material-icons {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .combinations-table__tr {
+                height    : 1.75rem;
+                font-size : 12px;
+            }
         }
     }
 

@@ -74,6 +74,11 @@
         margin-top     : .5rem;
     }
 
+    .selections-block__title {
+        font-size   : 1.75rem;
+        font-weight : 300;
+    }
+
     .selections-block__items {
         line-height: 1.25;
     }
