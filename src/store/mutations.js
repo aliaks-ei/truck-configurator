@@ -18,9 +18,7 @@ const mutations = {
             ? selectedElems.externalElements 
             : selectedElems.internalElements;
 
-        const targetElemIdx = truckElems.findIndex(
-            truckElem => truckElem.name === elem.name
-        );
+        const targetElemIdx = truckElems.findIndex(({ name }) => name === elem.name);
 
         if (targetElemIdx !== -1) {
             truckElems.splice(targetElemIdx, 1);
@@ -39,12 +37,12 @@ const mutations = {
         state.internalElems = internalElems;
     },
 
-    updateCombinationsPageState(state, isActive = false) {
-        state.isCombinationsPage = isActive;
+    updateCombinationsPageState(state, isCombinationsPage = false) {
+        state.isCombinationsPage = isCombinationsPage;
     },
 
-    updateSearchQuery(state, newValue = '') {
-        state.searchQuery = newValue;
+    updateSearchQuery(state, searchQuery = '') {
+        state.searchQuery = searchQuery;
     }
 };
 
