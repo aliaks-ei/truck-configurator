@@ -1,3 +1,4 @@
+/* eslint-disable */
 import mutations from '@/store/mutations';
 
 /** Test cases on "addTruckElemToSelected" mutation */
@@ -13,7 +14,7 @@ describe('Mutations: "addTruckElemToSelected" mutation', () => {
     });
 
     it('adds internal truck element to selected', () => {
-        const elem       = { name : 'mid-range cabin' };
+        const elem       = { name: 'mid-range cabin' };
         const isExternal = false;
 
         addTruckElemToSelected(state, { elem, isExternal });
@@ -23,7 +24,7 @@ describe('Mutations: "addTruckElemToSelected" mutation', () => {
     });
 
     it('adds external truck element to selected', () => {
-        const elem       = { name : 'logistics purpose' };
+        const elem       = { name: 'logistics purpose' };
         const isExternal = true;
 
         addTruckElemToSelected(state, { elem, isExternal });
@@ -33,7 +34,7 @@ describe('Mutations: "addTruckElemToSelected" mutation', () => {
     });
 
     it('adds external truck element to selected if no "isExternal" option passed', () => {
-        const elem = { name : 'construction purpose' };
+        const elem = { name: 'construction purpose' };
 
         addTruckElemToSelected(state, { elem });
 

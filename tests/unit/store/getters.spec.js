@@ -1,3 +1,4 @@
+/* eslint-disable */
 import getters from '@/store//getters';
 
 /** Test cases on "selectedTruckElems" getter */
@@ -33,7 +34,7 @@ describe('Getters: "selectedTruckElems" getter', () => {
 /** Test cases on "selectedTruckElemsLength" getter  */
 describe('Getters: "selectedTruckElemsLength" getter', () => {
     const selectedElems = {
-        internalElements : [{ name: 'long-range cabin' }, { name: 'mid-range cabin'}],
+        internalElements : [{ name: 'long-range cabin' }, { name: 'mid-range cabin' }],
         externalElements : [{ name: 'postal purpose' }]
     };
 

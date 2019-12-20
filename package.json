@@ -7,7 +7,6 @@
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
 		"server:run": "java -jar server/server.jar",
-		"test:e2e": "vue-cli-service test:e2e",
 		"test:unit": "vue-cli-service test:unit"
 	},
 	"dependencies": {
@@ -21,7 +20,6 @@
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^4.1.0",
-		"@vue/cli-plugin-e2e-cypress": "^4.1.0",
 		"@vue/cli-plugin-eslint": "^4.1.0",
 		"@vue/cli-plugin-unit-jest": "^4.1.0",
 		"@vue/cli-service": "^4.1.0",
