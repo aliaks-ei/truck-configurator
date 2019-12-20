@@ -1,4 +1,4 @@
-## Solution explanation
+# Solution explanation
 
 To search for the necessary truck elements (external or internal), type a keyword in the search bar at the top of the screen.
 When user selects at least one of the results presented in the table, the `Your selection` section appears at the bottom of the page. It is possible to delete any of the selected elements or all at once (note, that the `Your selection` section is hidden if there are no selected elements).
