@@ -2,7 +2,9 @@
 
 ## A prototype of solution that helps the engineers to visualize which components can be combined in accordance with sales department.
 
-## Install all dependencies
+## Build / run guide:
+
+### Install all dependencies
 ```
 yarn install
 ```
