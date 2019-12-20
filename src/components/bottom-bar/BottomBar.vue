@@ -17,14 +17,25 @@
 
         <!-- View combinations button -->
         <base-btn 
-            @click.native = "readPossibleCombinations" 
-            :disabled     = "isViewCombinationsBtnDisabled"
+            :disabled = "isViewCombinationsBtnDisabled"
+            v-b-modal.confirm-modal
             v-else
         >
             <span> View combinations </span>
 
             <i class="material-icons ml-2"> arrow_forward </i>
         </base-btn>
+
+        <!-- Confirmation dialog -->
+        <b-modal 
+            id    = "confirm-modal" 
+            title = "Confirm action"
+            @ok   = "readPossibleCombinations"
+        >
+            <p class="my-2"> 
+                Are you sure you want to continue to the <strong> 'Combinations' </strong> page? 
+            </p>
+        </b-modal>
     </footer>
 </template>
 
