@@ -56,7 +56,7 @@
         align-items     : center;
         flex-direction  : column;
         height          : 100%;
-        padding         : 2.5rem 2rem; 
+        padding         : 2rem; 
     }
 
     .combinations-wrapper__title {
@@ -95,7 +95,7 @@
         }
 
         .combinations-table__tr {
-            height: 3rem;
+            height: 2.75rem;
         }
 
         .combinations-table__no-results {

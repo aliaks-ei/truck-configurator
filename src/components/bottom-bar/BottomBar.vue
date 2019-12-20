@@ -62,21 +62,20 @@
     .bottom-bar {
         --bottombar-height: 11rem;
         
-        position         : fixed;
-        bottom           : 0;
-        left             : 0;
-        right            : 0;
-        display          : flex;
-        justify-content  : space-between; 
-        padding          : 1rem 2.5rem;
-        height           : var(--bottombar-height); 
-        background-color : #ffffff;
-        transform        : translateY(var(--bottombar-height));
-        transition       : transform 700ms cubic-bezier(0.25, 0.8, 0.25, 1);
-        will-change      : transform;
-        box-shadow       : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
-                           0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
-                           0px -1px 18px 0px rgba(0, 0, 0, 0.12);
+        position                   : fixed;
+        bottom                     : 0;
+        left                       : 0;
+        right                      : 0;
+        display                    : flex;
+        justify-content            : space-between; 
+        padding                    : 1rem 2.5rem;
+        height                     : var(--bottombar-height); 
+        background-color           : #ffffff;
+        transform                  : translateY(var(--bottombar-height));
+        transition-property        : transform, box-shadow;
+        transition-duration        : 700ms;
+        transition-timing-function : cubic-bezier(0.25, 0.8, 0.25, 1);
+        will-change                : transform;
 
         @media (max-width: 992px) {
             padding: 1rem 2rem;
@@ -88,7 +87,10 @@
     }
 
     .bottom-bar--shown {
-        transform: translateY(0);
+        transform  : translateY(0);
+        box-shadow : 0px -3px 5px -1px rgba(0, 0, 0, 0.1), 
+                     0px -5px 8px 0px rgba(0, 0, 0, 0.1), 
+                     0px -1px 18px 0px rgba(0, 0, 0, 0.12);
     }
 
 </style>
