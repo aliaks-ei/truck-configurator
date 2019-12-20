@@ -2,6 +2,7 @@
     <div class="selections-block">
         <h3 class="selections-block__title"> Your selection </h3>
 
+        <!-- Selections (internal and external) -->
         <div class="selections-block__items">
             <selection
                 v-for         = "truckElem in selectedElems.internalElements"
@@ -19,6 +20,7 @@
             ></selection>
         </div>
 
+        <!-- Unselect all btn -->
         <span 
             class  = "selections-block__unselect-btn"
             v-if   = "selectedTruckElemsLength && !isCombinationsPage"

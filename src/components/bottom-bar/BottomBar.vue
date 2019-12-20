@@ -30,7 +30,7 @@
         <b-modal 
             id    = "confirm-modal" 
             title = "Confirm action"
-            @ok   = "readPossibleCombinations"
+            @ok   = "readCombinations"
         >
             <p class="my-2"> 
                 Are you sure you want to go to the <strong> 'Combinations' </strong> page? 
@@ -41,6 +41,8 @@
 
 <script>
     import { mapActions, mapGetters, mapState, mapMutations } from 'vuex';
+
+    import helpers from '@/utils/helpers';
 
     import BaseBtn         from '../base/BaseBtn.vue';
     import SelectionsBlock from './SelectionsBlock.vue';
@@ -63,7 +65,16 @@
         },
         methods: {
             ...mapActions([ 'readPossibleCombinations' ]),
-            ...mapMutations([ 'updateCombinationsPageState' ])
+            ...mapMutations([ 'updateCombinationsPageState' ]),
+
+            async readCombinations() {
+                try {
+                    await this.readPossibleCombinations();
+                }
+                catch {
+                    helpers.showErrorToast.call(this);
+                }
+            }
         }
     };
 </script>

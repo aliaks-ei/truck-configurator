@@ -33,10 +33,15 @@
 
             searchByQuery: helpers.debouncedMethod(
                 async function searchForTruckElems() {
-                    const readInternalElems = this.readInternalTruckElems();
-                    const readExternalElems = this.readExternalTruckElems();
+                    try {
+                        const readInternalElems = this.readInternalTruckElems();
+                        const readExternalElems = this.readExternalTruckElems();
 
-                    await Promise.all([readInternalElems, readExternalElems]);
+                        await Promise.all([readInternalElems, readExternalElems]);
+                    }
+                    catch {
+                        helpers.showErrorToast.call(this);
+                    }
                 }, 
                 300
             )
