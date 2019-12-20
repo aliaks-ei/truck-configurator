@@ -1,5 +1,5 @@
 const getters = {
-    selectedTruckElems({ selectedElems }) {
+    selectedTruckElems({ selectedElems = {} }) {
         return function getElements(isExternal = false) {
             return isExternal 
                 ? selectedElems.externalElements
@@ -7,7 +7,7 @@ const getters = {
         };
     },
 
-    selectedTruckElemsLength({ selectedElems }) {
+    selectedTruckElemsLength({ selectedElems = {} }) {
         const { externalElements, internalElements } = selectedElems;
 
         return externalElements.length + internalElements.length;
