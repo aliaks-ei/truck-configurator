@@ -33,7 +33,7 @@
             @ok   = "readPossibleCombinations"
         >
             <p class="my-2"> 
-                Are you sure you want to continue to the <strong> 'Combinations' </strong> page? 
+                Are you sure you want to go to the <strong> 'Combinations' </strong> page? 
             </p>
         </b-modal>
     </footer>

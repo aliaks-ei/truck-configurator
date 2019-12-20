@@ -1,13 +1,16 @@
-# truck-configurator
+# Truck configurator
 
-## Project setup
+## A prototype of solution that helps the engineers to visualize which components can be combined in accordance with sales department.
+
+## Install all dependencies
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Setup development environment
 ```
-yarn run serve
+yarn server:run // Starts backend server on port 8080
+yarn serve      // Starts frontend application on development server
 ```
 
 ### Compiles and minifies for production
@@ -15,26 +18,8 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your end-to-end tests
-```
-yarn run test:e2e
-```
-
-### Run your unit tests
+### Runs unit tests
 ```
 yarn run test:unit
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
