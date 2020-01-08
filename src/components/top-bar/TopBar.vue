@@ -96,6 +96,7 @@
         .topbar__search-field {
             margin : auto;
             flex   : 0 0 2rem;
+			height : 2rem;
             width  : 100%;
         }
     }
