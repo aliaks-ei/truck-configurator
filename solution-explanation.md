@@ -3,7 +3,7 @@
 To search for the necessary truck elements (external or internal), type a keyword in the search bar at the top of the screen.
 When user selects at least one of the results presented in the table, the `Your selection` section appears at the bottom of the page. It is possible to delete any of the selected elements or all at once (note, that the `Your selection` section is hidden if there are no selected elements).
 
-The `View combinations` button enabled only if at least one internal and external element is selected (i.e. combinations can be made). When user clicks on `View combinations` button, a confirmation modal appears in accordance with the task. 
+The `View combinations` button enabled only if at least one internal and external element are selected (i.e. combinations can be made). When user clicks on `View combinations` button, a confirmation modal appears in accordance with the task. 
 
 > Business value of this confirmation modal raises questions: usually such a modal is shown if any irreversible actions are performed. In this case, there is no irreversible action: user can return to the previous page without losing data. Therefore, modal can be abandoned in future releases.
 
