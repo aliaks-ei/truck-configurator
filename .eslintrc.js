@@ -1,9 +1,9 @@
 /* eslint-disable */
 module.exports = {
 	root: true,
-	env: { node: true }, 
-  	'extends': ['plugin:vue/essential', '@vue/airbnb'],
-  	rules: {
+	env: { node: true },
+	'extends': ['plugin:vue/essential', '@vue/airbnb'],
+	rules: {
 		'array-bracket-spacing': 'off',
 		'array-callback-return': 'off',
 		'arrow-parens': ['error', 'as-needed'],
@@ -42,6 +42,6 @@ module.exports = {
 		'prefer-destructuring': ['error', {'object': true, 'array': false}],
 		'template-curly-spacing': ['error', 'always'],
 		'vue/no-side-effects-in-computed-properties': 'error'
-  	},
-  	parserOptions: { parser: 'babel-eslint' }
+	},
+	parserOptions: { parser: 'babel-eslint' }
 }

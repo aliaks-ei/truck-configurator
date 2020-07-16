@@ -1,61 +1,61 @@
 import { HTTP } from '@/configs/http';
 
 const actions = {
-    async readInternalTruckElems({ commit, state }) {
-        const { searchQuery } = state;
+	async readInternalTruckElems({ commit, state }) {
+		const { searchQuery } = state;
 
-        if (!(searchQuery && searchQuery.length)) {
-            commit('fillInternalElems');
+		if (!(searchQuery && searchQuery.length)) {
+			commit('fillInternalElems');
 
-            return;
-        }
-        try {
-            const { data } = await HTTP.get(`internal/${ searchQuery }`);
-            
-            commit('fillInternalElems', data);
+			return;
+		}
+		try {
+			const { data } = await HTTP.get(`internal/${ searchQuery }`);
 
-            return data;
-        }
-        catch (errors) {
-            throw errors;
-        }
-    },
+			commit('fillInternalElems', data);
 
-    async readExternalTruckElems({ commit, state }) {
-        const { searchQuery } = state;
+			return data;
+		}
+		catch (errors) {
+			throw errors;
+		}
+	},
 
-        if (!(searchQuery && searchQuery.length)) {
-            commit('fillExternalElems');
+	async readExternalTruckElems({ commit, state }) {
+		const { searchQuery } = state;
 
-            return;
-        }
+		if (!(searchQuery && searchQuery.length)) {
+			commit('fillExternalElems');
 
-        try {
-            const { data } = await HTTP.get(`external/${ searchQuery }`);
+			return;
+		}
 
-            commit('fillExternalElems', data);
+		try {
+			const { data } = await HTTP.get(`external/${ searchQuery }`);
 
-            return data;
-        }
-        catch (errors) {
-            throw errors;
-        }
-    },
+			commit('fillExternalElems', data);
 
-    async readPossibleCombinations({ commit, state }) {
-        try {
-            const { data } = await HTTP.post('possible-combinations', state.selectedElems);
+			return data;
+		}
+		catch (errors) {
+			throw errors;
+		}
+	},
 
-            commit('fillCombinations', data);
-            commit('updateSearchQuery');
-            commit('updateCombinationsPageState', true);
+	async readPossibleCombinations({ commit, state }) {
+		try {
+			const { data } = await HTTP.post('possible-combinations', state.selectedElems);
 
-            return data;
-        }
-        catch (errors) {
-            throw errors;
-        }
-    }
+			commit('fillCombinations', data);
+			commit('updateSearchQuery');
+			commit('updateCombinationsPageState', true);
+
+			return data;
+		}
+		catch (errors) {
+			throw errors;
+		}
+	}
 };
 
 export default actions;

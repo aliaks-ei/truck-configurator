@@ -17,17 +17,16 @@ yarn install
 
 ### Setup development environment
 ```
-yarn run server:run // Starts backend server on port 8080
-yarn run serve      // Starts frontend app on development server
+yarn server:run // Starts backend server on port 8080
+yarn serve      // Starts frontend app on development server
 ```
 
-### Compiles and minifies for production
+### Production build
 ```
-yarn run build
-```
-
-### Runs unit tests
-```
-yarn run test:unit
+yarn build
 ```
 
+### Run tests
+```
+yarn test:unit
+```

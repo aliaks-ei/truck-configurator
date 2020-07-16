@@ -43,9 +43,9 @@
 	}
 
 	.main {
-        height     : calc(100% - var(--topbar-height));
-        margin     : var(--topbar-height) 0 0;
-        overflow-y : auto;
+		height     : calc(100% - var(--topbar-height));
+		margin     : var(--topbar-height) 0 0;
+		overflow-y : auto;
 	}
-	
+
 </style>

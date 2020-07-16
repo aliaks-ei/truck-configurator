@@ -7,19 +7,19 @@ $dark      : #303c49;
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
-// Global variables 
+// Global variables
 :root {
-    --topbar-height: 8rem;
+	--topbar-height: 8rem;
 
-    @media (max-width: 576px) {
-        --topbar-height: 6rem;
-    }
+	@media (max-width: 576px) {
+		--topbar-height: 6rem;
+	}
 }
 
 html, body {
-    height      : 100%;
-    width       : 100%;
-    font-family : 'Open Sans', sans-serif;
-    font-size   : 16px;
-    overflow    : hidden;
+	height      : 100%;
+	width       : 100%;
+	font-family : 'Open Sans', sans-serif;
+	font-size   : 16px;
+	overflow    : hidden;
 }
