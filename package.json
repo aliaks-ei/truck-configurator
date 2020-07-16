@@ -7,6 +7,7 @@
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
 		"server:run": "java -jar server/server.jar",
+		"editorconfig:check": "editorconfig-checker --exclude '.git|node_modules|.DS_Store|dist'",
 		"test:unit": "vue-cli-service test:unit"
 	},
 	"dependencies": {
@@ -26,6 +27,7 @@
 		"@vue/eslint-config-airbnb": "^4.0.0",
 		"@vue/test-utils": "1.0.0-beta.29",
 		"babel-eslint": "^10.0.3",
+		"editorconfig-checker": "^3.1.0",
 		"eslint": "^5.16.0",
 		"eslint-plugin-vue": "^5.0.0",
 		"lodash.debounce": "^4.0.8",
