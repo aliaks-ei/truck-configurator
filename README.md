@@ -1,5 +1,7 @@
 # Truck configurator
 
+[![](https://github.com/alexmozheyko/truck-configurator/workflows/Unit%20tests/badge.svg)](https://github.com/alexmozheyko/childde/actions?query=workflow%3A%22Unit+tests%22)
+
 ### A prototype of solution that helps the engineers to visualize which components can be combined in accordance with sales department.
 
 #### For solution explanations please visit [Solution explanation file](./solution-explanation.md)
