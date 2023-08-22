@@ -1,16 +1,13 @@
 const state = {
-	combinations  : [],
-	externalElems : [],
-	internalElems : [],
-
-	selectedElems: {
-		internalElements : [],
-		externalElements : []
+	combinations: [],
+	externalElements: [],
+	internalElements: [],
+	selectedElements: {
+		internalElements: [],
+		externalElements: [],
 	},
-
 	searchQuery: '',
-
-	isCombinationsPage: false
+	isCombinationsPage: false,
 };
 
 export default state;
