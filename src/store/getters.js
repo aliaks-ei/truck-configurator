@@ -1,17 +1,15 @@
 const getters = {
-	selectedTruckElems({ selectedElems = {} }) {
+	selectedTruckElements({ selectedElements = {} }) {
 		return function getElements(isExternal = false) {
-			return isExternal
-				? selectedElems.externalElements
-				: selectedElems.internalElements;
+			return isExternal ? selectedElements.externalElements : selectedElements.internalElements;
 		};
 	},
 
-	selectedTruckElemsLength({ selectedElems = {} }) {
-		const { externalElements, internalElements } = selectedElems;
+	selectedTruckElementsLength({ selectedElements = {} }) {
+		const { externalElements, internalElements } = selectedElements;
 
 		return externalElements.length + internalElements.length;
-	}
+	},
 };
 
 export default getters;

@@ -1,27 +1,26 @@
 const mutations = {
-	addTruckElemToSelected({ selectedElems }, { elem = {}, isExternal = false } = {}) {
+	addTruckElemToSelected({ selectedElements }, { elem = {}, isExternal = false } = {}) {
 		if (isExternal) {
-			selectedElems.externalElements.push(elem);
-		}
-		else {
-			selectedElems.internalElements.push(elem);
+			selectedElements.externalElements.push(elem);
+		} else {
+			selectedElements.internalElements.push(elem);
 		}
 	},
 
-	clearAllSelections({ selectedElems }) {
-		selectedElems.externalElements = [];
-		selectedElems.internalElements = [];
+	clearAllSelections({ selectedElements }) {
+		selectedElements.externalElements = [];
+		selectedElements.internalElements = [];
 	},
 
-	removeTruckElemFromSelected({ selectedElems }, { elem = {}, isExternal = false } = {}) {
-		const truckElems = isExternal
-			? selectedElems.externalElements
-			: selectedElems.internalElements;
+	removeTruckElemFromSelected({ selectedElements }, { elem = {}, isExternal = false } = {}) {
+		const truckElements = isExternal
+			? selectedElements.externalElements
+			: selectedElements.internalElements;
 
-		const targetElemIdx = truckElems.findIndex(({ name }) => name === elem.name);
+		const targetElemIdx = truckElements.findIndex(({ name }) => name === elem.name);
 
 		if (targetElemIdx !== -1) {
-			truckElems.splice(targetElemIdx, 1);
+			truckElements.splice(targetElemIdx, 1);
 		}
 	},
 
@@ -29,12 +28,12 @@ const mutations = {
 		state.combinations = combinations;
 	},
 
-	fillExternalElems(state, externalElems = []) {
-		state.externalElems = externalElems;
+	fillExternalElements(state, externalElements = []) {
+		state.externalElements = externalElements;
 	},
 
-	fillInternalElems(state, internalElems = []) {
-		state.internalElems = internalElems;
+	fillInternalElements(state, internalElements = []) {
+		state.internalElements = internalElements;
 	},
 
 	updateCombinationsPageState(state, isCombinationsPage = false) {
@@ -43,7 +42,7 @@ const mutations = {
 
 	updateSearchQuery(state, searchQuery = '') {
 		state.searchQuery = searchQuery;
-	}
+	},
 };
 
 export default mutations;
